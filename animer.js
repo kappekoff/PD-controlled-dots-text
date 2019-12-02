@@ -17,7 +17,7 @@ function setup(){
     textSize(192);
     text('IT 2', 10, 200);
 
-    var points = font.textToPoints('Matematikk', 10, 200, 100, {
+    var points = font.textToPoints('Informasjonsteknologi', 10, 200, 100, {
         sampleFactor: 0.15
     });
     
