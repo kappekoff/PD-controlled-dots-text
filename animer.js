@@ -13,7 +13,9 @@ function preload() {
 }
 
 function setup(){
+    
     inp = createInput();
+    
     inp.input(myInputEvent);
     createCanvas(xSize,ySize);
     textFont(font);
