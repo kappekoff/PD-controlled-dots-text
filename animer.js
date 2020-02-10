@@ -10,6 +10,7 @@ var inp;
 
 function preload() {
     font = loadFont('AvenirNextLTPro-Demi.otf');
+    
     inp = createInput('');
 }
 
