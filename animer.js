@@ -6,16 +6,18 @@ var sirkler = [];
 var r = 0;
 var g = 0;
 var b = 0;
+var inp;
 
 function preload() {
     font = loadFont('AvenirNextLTPro-Demi.otf');
 }
 
 function setup(){
+    inp = createInput('');
+    inp.input(myInputEvent);
     createCanvas(xSize,ySize);
     textFont(font);
     textSize(192);
-    text('IT 2', 10, 200);
 
     var points = font.textToPoints('Stein', 10, 200, 100, {
         sampleFactor: 0.15
@@ -27,7 +29,17 @@ function setup(){
         sirkler.push(sirkel);
       }
 }
-
+function myInputEvent() {
+  var points = font.textToPoints(this.value(), 10, 200, 100, {
+        sampleFactor: 0.15
+    });
+    
+    for (var i = 0; i < points.length; i++) {
+        var pt = points[i];
+        var sirkel = new Sirkel(pt.x, pt.y, randomGaussian(7,3));
+        sirkler[i] = sirkel;
+    }
+}
 function draw() {
     background(255);
     fill(r);
