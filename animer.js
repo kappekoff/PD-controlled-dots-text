@@ -33,7 +33,7 @@ function setup(){
 }
 function myInputEvent() {
     sirkler = [];
-    var points = font.textToPoints('Informasjonsteknologi', 10, 200, 100, {
+    var points = font.textToPoints(this.value(), 10, 200, 100, {
         sampleFactor: 0.15
     });
     
