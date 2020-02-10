@@ -32,15 +32,16 @@ function setup(){
       }
 }
 function myInputEvent() {
-  var points = font.textToPoints(this.value(), 10, 200, 100, {
+    sirkler = [];
+    var points = font.textToPoints('Informasjonsteknologi', 10, 200, 100, {
         sampleFactor: 0.15
     });
     
     for (var i = 0; i < points.length; i++) {
         var pt = points[i];
         var sirkel = new Sirkel(pt.x, pt.y, randomGaussian(7,3));
-        sirkler[i] = sirkel;
-    }
+        sirkler.push(sirkel);
+      }
 }
 function draw() {
     background(255);
