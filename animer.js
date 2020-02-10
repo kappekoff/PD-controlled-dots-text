@@ -19,7 +19,7 @@ function setup(){
     textFont(font);
     textSize(192);
 
-    var points = font.textToPoints('Stein', 10, 200, 100, {
+    var points = font.textToPoints('Informasjonsteknologi', 10, 200, 100, {
         sampleFactor: 0.15
     });
     
