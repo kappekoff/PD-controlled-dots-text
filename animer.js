@@ -10,12 +10,10 @@ var inp;
 
 function preload() {
     font = loadFont('AvenirNextLTPro-Demi.otf');
-    
-    inp = createInput('');
 }
 
 function setup(){
-    
+    inp = createInput();
     inp.input(myInputEvent);
     createCanvas(xSize,ySize);
     textFont(font);
