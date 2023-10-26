@@ -6,7 +6,7 @@ var sirkler = [];
 var r = 0;
 var g = 0;
 var b = 0;
-var gammmelSekund = 0
+var gammmelMinutt = 0
 var inp;
 
 function preload() {
@@ -19,7 +19,7 @@ function setup(){
     textFont(font);
     textSize(192);
 
-    var points = font.textToPoints(hour() + ':' + minute() + ':' + second(), 10, 200, 100, {
+    var points = font.textToPoints(hour() + ':' + minute() + ':', 10, 200, 100, {
         sampleFactor: 0.15
     });
     
@@ -31,7 +31,7 @@ function setup(){
 }
 function nyttKlokkeslett() {
     sirkler = [];
-        var points = font.textToPoints(hour() + ':' + minute() + ':' + second(), 10, 200, 100, {
+        var points = font.textToPoints(hour() + ':' + minute(), 10, 200, 100, {
         sampleFactor: 0.15
     });
     
@@ -60,9 +60,9 @@ function draw() {
         b += 255*(1/sirkler.length);
 
     }
-    if(gammmelSekund != second()) {
+    if(gammmelMinutt != second()) {
         nyttKlokkeslett()
-        gammmelSekund = second()
+        gammmelMinutt = minute()
     }
     
 
