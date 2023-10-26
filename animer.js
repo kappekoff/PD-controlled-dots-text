@@ -60,7 +60,7 @@ function draw() {
         b += 255*(1/sirkler.length);
 
     }
-    if(gammmelMinutt != minute()()) {
+    if(gammmelMinutt != minute()) {
         console.log(gammmelMinutt)
         nyttKlokkeslett()
         gammmelMinutt = minute()
