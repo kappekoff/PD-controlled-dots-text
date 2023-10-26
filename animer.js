@@ -14,14 +14,11 @@ function preload() {
 
 function setup(){
     
-    inp = createInput();
-    
-    inp.input(myInputEvent);
     createCanvas(xSize,ySize);
     textFont(font);
     textSize(192);
 
-    var points = font.textToPoints('Informasjonsteknologi', 10, 200, 100, {
+    var points = font.textToPoints(hour() + ':' + minute() + ':' + second(), 10, 200, 100, {
         sampleFactor: 0.15
     });
     
@@ -29,11 +26,11 @@ function setup(){
         var pt = points[i];
         var sirkel = new Sirkel(pt.x, pt.y, randomGaussian(7,3));
         sirkler.push(sirkel);
-      }
+    }
 }
-function myInputEvent() {
+function nyttKlokkeslett() {
     sirkler = [];
-    var points = font.textToPoints(this.value(), 10, 200, 100, {
+        var points = font.textToPoints(hour() + ':' + minute() + ':' + second(), 10, 200, 100, {
         sampleFactor: 0.15
     });
     
@@ -41,7 +38,7 @@ function myInputEvent() {
         var pt = points[i];
         var sirkel = new Sirkel(pt.x, pt.y, randomGaussian(7,3));
         sirkler.push(sirkel);
-      }
+    }
 }
 function draw() {
     background(255);
@@ -62,6 +59,7 @@ function draw() {
         b += 255*(1/sirkler.length);
 
     }  
+    nyttKlokkeslett()
 
 }
 
