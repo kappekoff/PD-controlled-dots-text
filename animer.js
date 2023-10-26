@@ -6,6 +6,7 @@ var sirkler = [];
 var r = 0;
 var g = 0;
 var b = 0;
+var gammmelSekund = 0
 var inp;
 
 function preload() {
@@ -58,8 +59,12 @@ function draw() {
         g += 255*(1/sirkler.length);
         b += 255*(1/sirkler.length);
 
-    }  
-    nyttKlokkeslett()
+    }
+    if(gammmelSekund != second()) {
+        nyttKlokkeslett()
+        gammmelSekund = second()
+    }
+    
 
 }
 
